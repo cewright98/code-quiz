@@ -20,6 +20,7 @@ var highScoreLink = document.querySelector("#highScoreLink");
 var savedScoresContent = document.querySelector("#savedScoresContent");
 var highScoreContent = document.querySelector("#highScoreContent");
 var goBackButton = document.querySelector("#goBack");
+var highScoreList = document.querySelector("#highScoreList");
 var count = 0;
 var timeLeft = 90;
 var score = 0;
@@ -142,6 +143,8 @@ function countdown() {
 };
 
 function startQuiz() {
+    timer.style.display = 'block';
+    score = 0;
     timeLeft = 90;
     // start timer
     countdown();
@@ -186,6 +189,9 @@ function endQuiz() {
     
     // show score
     finalScore.textContent = "Your final score is: " + score;
+
+    count = 0;
+    correctness.textContent = "";
 };
 
 function saveScores() {
@@ -200,8 +206,8 @@ function saveScores() {
     savedScores[i].initials = localStorage.getItem("initials");
     savedScores[i].userScore = score;
 
-    savedScoresContent.textContent = savedScoresContent.textContent + savedScores[i].initials + ":  " + savedScores[i].userScore;
-
+    savedScoresContent.textContent = savedScoresContent.textContent + " | " + savedScores[i].initials + ":  " + savedScores[i].userScore;
+    
     console.log(savedScores[i]);
 
     i++;
@@ -243,11 +249,11 @@ highScoreLink.addEventListener("click", function() {
 });
 
 goBackButton.addEventListener("click", function() {
-    startContent.style.display = 'block';
-    startBtn.style.display = 'block';
     quiz.style.display = 'none';
     endContent.style.display = 'none';
     highScoreContent.style.display = 'none';
+    startContent.style.display = 'block';
+    startBtn.style.display = 'block';
 });
 
 startBtn.addEventListener("click", startQuiz);
