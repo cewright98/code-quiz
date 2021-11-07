@@ -9,7 +9,7 @@
 </head>
 <body>
     <header>
-        <div class="high-scores">
+        <div class="high-scores" id="highScoreLink">
             View high scores
         </div>
         <div id="timer">
@@ -17,13 +17,61 @@
         </div>
     </header>
     <main>
-        <h1>Coding Quiz</h1>
-        <p>
-            You have 60 seconds to complete 10 multiple choice coding questions. 
-            <br />
-            If you answer a question incorrectly you will be docked 10 seconds!
-        </p>
-        <button id="startBtn">Start Quiz</button>
+        <div id="startContent">
+            <h1>Coding Quiz</h1>
+            <p>
+                You have 90 seconds to complete 10 multiple choice coding questions. 
+                <br />
+                Each question is worth 10 points.
+                <br />
+                If you answer a question incorrectly you will be docked 10 seconds!
+            </p>
+            <button id="startBtn">Start Quiz</button>
+        </div>
+        <div id="quiz" class="quiz" hidden>
+            <h1 id="quizQuestion"></h1>
+            <form>
+                <label class="container">
+                    <div>
+                        <input type="radio">
+                        <span class="selector" id="selectA">a</span>
+                    </div>
+                    <p id="choiceA">a: </p>
+                </label>
+                <label class="container">
+                    <div>
+                        <input type="radio">
+                        <span class="selector" id="selectB">b</span>
+                    </div>
+                    <p id="choiceB">b: </p>
+                </label>
+                <label class="container">
+                    <div>
+                        <input type="radio">
+                        <span class="selector" id="selectC">c</span>
+                    </div>
+                    <p id="choiceC">c: </p>
+                </label>
+                <label class="container">
+                    <div>
+                        <input type="radio">
+                        <span class="selector" id="selectD">d</span>
+                    </div>
+                    <p id="choiceD">d: </p>
+                </label>
+            </form>
+            <p id="correctness"></p>
+        </div>
+        <div id="endContent" hidden>
+            <h2>All done!</h2>
+            <p id="finalScore"></p>
+            <p>Enter Your Initials: <input type="text" id="userInitials"> <input type="submit" id="scoreSubmit"></p>
+        </div>
+        <div id="highScoreContent" hidden>
+            <h2>High Scores:</h2>
+            <p id="savedScoresContent"></p>
+            <button id="goBack">Go back</button>
+        </div>
     </main>
 
     <script src="./assets/script.js"></script>
