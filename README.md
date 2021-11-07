@@ -18,5 +18,7 @@ A website that takes the user through a coding quiz one question at a time once 
 ## Website
 https://cewright98.github.io/code-quiz/
 
+<img width="637" alt="Screen Shot 2021-11-05 at 2 08 10 PM" src="https://user-images.githubusercontent.com/90212939/140660743-61e3dfe9-bb46-4c3c-b5af-25db9ee9ad9c.png">
+
 ## Contribution
 Made by Claire Wright
